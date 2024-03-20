@@ -11,14 +11,17 @@ func main() {
 		Author: "Herman Van Dicke",
 		Pages:  543,
 	}
-	myBook.PrintInfo()
+	book.Print(myBook)
+	// myBook.PrintInfo()
 
 	myBook.SetTitle("Moby Dick (Edición Especial)")
 	fmt.Println(myBook.GetTitle())
 
 	mySecondBook := book.NewBook("La Ciudad Y Los Perros", "Mario Vargas Llosa", 843)
-	mySecondBook.PrintInfo()
+	// mySecondBook.PrintInfo()
+	book.Print(mySecondBook)
 
 	myTextBook :=book.NewTextBook("Coquito","Enrique Jimenez",159,"Escuela Nueva", "Primaria")
-	myTextBook.PrintInfo()
+	// myTextBook.PrintInfo()
+	book.Print(myTextBook)
 }

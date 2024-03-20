@@ -1,6 +1,8 @@
 package book
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type TextBook struct {
 	Book

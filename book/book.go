@@ -2,10 +2,27 @@ package book
 
 import "fmt"
 
+type Printable interface {
+	PrintInfo()
+}
+
+func Print(p Printable) {
+	p.PrintInfo()
+}
+
 type Book struct {
 	Title  string
 	Author string
 	Pages  int
+}
+
+// PrintInfo implements Printable.
+// func (book Book) PrintInfo() {
+// 	panic("unimplemented")
+// }
+
+func (b Book) PrintInfo() {
+	fmt.Printf("Title: %s \nAuthor: %s\nPages: %d\n", b.Title, b.Author, b.Pages)
 }
 
 func NewBook(title string, author string, pages int) *Book {
@@ -14,10 +31,6 @@ func NewBook(title string, author string, pages int) *Book {
 		Author: author,
 		Pages:  pages,
 	}
-}
-
-func (b *Book) PrintInfo() {
-	fmt.Printf("Title: %s \nAuthor: %s\nPages: %d\n", b.Title, b.Author, b.Pages)
 }
 
 func (book *Book) GetTitle() string {
@@ -46,3 +59,5 @@ func (book *Book) SetPages(Pages int) *Book {
 	book.Pages = Pages
 	return book
 }
+
+
