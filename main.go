@@ -18,4 +18,7 @@ func main() {
 
 	mySecondBook := book.NewBook("La Ciudad Y Los Perros", "Mario Vargas Llosa", 843)
 	mySecondBook.PrintInfo()
+
+	myTextBook :=book.NewTextBook("Coquito","Enrique Jimenez",159,"Escuela Nueva", "Primaria")
+	myTextBook.PrintInfo()
 }
